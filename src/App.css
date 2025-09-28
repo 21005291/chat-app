@@ -1,0 +1,34 @@
+.app {
+  display: flex;
+  background-color: #fbf8f8; /* Gemini-like background */
+  height: 100vh;
+  width: 100%;
+  color: #0c0c0c;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 70px; /* collapsed */
+  transition: width 0.3s;
+  background-color: #f6f3f3;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar.extended {
+  width: 240px; /* expanded */
+}
+
+.app-content {
+  flex: 1;
+  margin-left: 70px; /* match sidebar width */
+  transition: margin-left 0.3s;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.sidebar.extended ~ .app-content {
+  margin-left: 240px;
+}
